@@ -5,14 +5,14 @@ import {FaTrash, FaArrowUp, FaArrowDown, FaList, FaTree, FaCheckDouble} from 're
 import {toast} from 'react-toastify'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import {useGetAllQuery, useDeleteMutation} from '../slices/treesApiSlice'
+import {useGetAllQuery, useDeleteByIdMutation} from '../slices/treesApiSlice'
 import {Helmet} from 'react-helmet'
 const TreesPage = () => {
   const {data: trees, isLoading, isError, error, refetch} = useGetAllQuery()
   const [selectedTrees, setSelectedTrees] = useState(null)
   const [allTrees, setAllTrees] = useState([])
   const [sortCriteria, setSortCriteria] = useState({field: 'createdAt', order: 'desc'})
-  const [deleteTree, {isLoading: deleting}] = useDeleteMutation()
+  const [deleteTree, {isLoading: deleting}] = useDeleteByIdMutation()
   const sortHandler = (field, order) => setSortCriteria({field, order})
   const deleteHandler = async _id => {
     try {
