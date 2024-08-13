@@ -8,8 +8,8 @@ const apiSlice = createApi({
     baseUrl: BASE_URL
   }),
   tagTypes: [
-    'nodes',
-    'trees'
+    'node',
+    'tree'
   ],
   endpoints: builder => ({})
 })
