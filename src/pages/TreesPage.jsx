@@ -132,7 +132,7 @@ const TreesPage = () => {
                   />
                 </td>
                 <td>
-                  <Link to={`/trees/${tree._id}`}>
+                  <Link to={`/trees?_id=${tree._id}`}>
                     {tree._id}
                   </Link>
                 </td>

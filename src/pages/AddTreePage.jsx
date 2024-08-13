@@ -22,7 +22,7 @@ const AddTreePage = () => {
     event.preventDefault()
     try {
       const response = await add({values}).unwrap()
-      navigate(`/trees/${response._id}`)
+      navigate(`/trees?_id=${response._id}`)
       toast.success(response.message)
     } catch (error) {
       toast.error(error?.data?.message || error.error)
